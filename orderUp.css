@@ -1,0 +1,81 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+ 
+  #main-heading {
+    text-align: center;
+    color: #333;
+  }
+
+  .form-container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .form-container fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+  }
+
+  .form-container legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-container label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .form-container input[type="text"],
+  .form-container input[type="password"] {
+    width: 250px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .form-container select {
+    width: 120px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .form-container button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .form-container button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  #business-logo {
+    display: block;
+    margin: 30px auto;
+    max-width: 300px;
+  }
+  .form-container label {
+    display: inline-block;
+    width: 160px;
+    margin-right: 5px;
+    font-weight: bold;
+}

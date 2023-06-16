@@ -1,27 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="results.css">
   <title>Form Submission Successful</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    h1 {
-      margin-top: 50px;
-      color: #333;
-    }
-  </style>
 </head>
 
 <body>
-  <h1>Form Submission Successful</h1>
-  <p>Thank you for submitting the form.</p>
-</body>
+  <h1>Order Placed</h1>
 
+  <h2>Billing Address</h2>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td id="firstname"></td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td id="lastname"></td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td id="streetaddress"></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td id="city"></td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td id="state"></td>
+    </tr>
+  </table>
+
+  <h2>Delivery Address</h2>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>First Name</td>
+      <td id="deliveryFirstname"></td>
+    </tr>
+    <tr>
+      <td>Last Name</td>
+      <td id="deliveryLastname"></td>
+    </tr>
+    <tr>
+      <td>Street Address</td>
+      <td id="deliveryStreetAddress"></td>
+    </tr>
+    <tr>
+      <td>City</td>
+      <td id="deliveryCity"></td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td id="deliveryState"></td>
+    </tr>
+  </table>
+
+  <h2>Credit Card Information</h2>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Payment Method</td>
+      <td id="payment"></td>
+    </tr>
+    <tr>
+      <td>Credit Card Number</td>
+      <td id="creditcardnumber"></td>
+    </tr>
+    <tr>
+      <td>Expiration Date</td>
+      <td id="expirationdate"></td>
+    </tr>
+    <tr>
+      <td>Expiration Year</td>
+      <td id="expirationyear"></td>
+    </tr>
+    <tr>
+    <tr>
+      <td>CVV</td>
+      <td id="cvv"></td>
+    </tr>
+  </table>
+
+  <h2>User Information</h2>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>Value</th>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td id="username"></td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td id="password"></td>
+    </tr>
+  </table>
+  
+  <script>
+ function populateFields() {
+  var deliveryFirstname = getParameterValue("deliveryFirstname");
+  var deliveryLastname = getParameterValue("deliveryLastname");
+  var deliveryStreetAddress = getParameterValue("deliveryStreetAddress");
+  var deliveryCity = getParameterValue("deliveryCity");
+  var deliveryState = getParameterValue("deliveryState");
+
+  var billingFirstname = getParameterValue("firstname");
+  var billingLastname = getParameterValue("lastname");
+  var billingStreetAddress = getParameterValue("streetaddress");
+  var billingCity = getParameterValue("city");
+  var billingState = getParameterValue("state");
+
+  var payment = getParameterValue("payment");
+  var creditcardnumber = getParameterValue("creditcardnumber");
+  var expirationdate = getParameterValue("expirationdate");
+  var expirationyear = getParameterValue("expirationyear"); // Add this line
+
+  
+  var cvv = getParameterValue("cvv");
+
+  var username = getParameterValue("username");
+  var password = getParameterValue("password1");
+
+  document.getElementById("deliveryFirstname").textContent = deliveryFirstname;
+  document.getElementById("deliveryLastname").textContent = deliveryLastname;
+  document.getElementById("deliveryStreetAddress").textContent = deliveryStreetAddress;
+  document.getElementById("deliveryCity").textContent = deliveryCity;
+  document.getElementById("deliveryState").textContent = deliveryState;
+
+  document.getElementById("firstname").textContent = billingFirstname;
+  document.getElementById("lastname").textContent = billingLastname;
+  document.getElementById("streetaddress").textContent = billingStreetAddress;
+  document.getElementById("city").textContent = billingCity;
+  document.getElementById("state").textContent = billingState;
+
+  document.getElementById("payment").textContent = payment;
+  document.getElementById("creditcardnumber").textContent = creditcardnumber;
+  document.getElementById("expirationdate").textContent = expirationdate;
+  document.getElementById("expirationyear").textContent = expirationyear; // Add this line
+  document.getElementById("cvv").textContent = cvv;
+
+  document.getElementById("username").textContent = username;
+  document.getElementById("password").textContent = password;
+}
+
+function getParameterValue(parameterName) {
+  var urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(parameterName);
+}
+
+window.onload = populateFields;
+</script>
+</body>
 </html>
